@@ -5,12 +5,12 @@ from sklearn import datasets
 import os
 
 home = os.environ['project_home']
-workflow_home = os.environ['workflow_path']
+workflow_history_path = os.environ['workflow_history_path']
 step = "parameter"
 target_path = os.environ['target_path']
 seq = os.environ.get('seq', '0')
 
-MM_PATH = os.path.join(home, workflow_home, step, "parameter.csv")
+MM_PATH = os.path.join(workflow_history_path, step, "parameter.csv")
 DATA_PATH = home + '/data_in/'
 
 # Other datasets in sklearn have similar "load" functions
