@@ -6,7 +6,7 @@ import pickle
 import csv
 
 home = os.environ['project_home']
-workflow_home = os.environ['workflow_path']
+workflow_history_path = os.environ['workflow_history_path']
 step = "models"
 target_path = os.environ['target_path']
 seq = os.environ.get('seq', '0')
@@ -30,8 +30,7 @@ with open(os.path.join(MM_MODEL, 'logistic_model.pkl'), 'wb') as f:
     pickle.dump(logistic, f)
 
 
-# train_file = '/mm/step/train.csv'
-train_file = os.path.join(home, workflow_home, step, target_path, seq, 'train.csv')
+train_file = os.path.join(workflow_history_path, step, target_path, seq, 'train.csv')
 
 with open(train_file, 'w') as csvfile:
     fieldnames = ['target', 'path', 'args']

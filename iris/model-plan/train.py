@@ -5,7 +5,7 @@ import os, sys
 
 
 home = os.environ['project_home']
-workflow_home = os.environ['workflow_path']
+workflow_history_path = os.environ['workflow_history_path']
 step = 'models'
 target_path = os.environ['target_path']
 seq = os.environ.get('seq', '0')
@@ -13,8 +13,7 @@ seq = os.environ.get('seq', '0')
 MM_MODEL = os.path.join(home, 'model') 
 MM_DATA = os.path.join(home, 'data_in') 
 
-# MM_INFO = '/mm/step/train.csv'
-MM_INFO = os.path.join(home, workflow_home, step, target_path, seq, 'train.csv')
+MM_INFO = os.path.join(workflow_history_path, step, target_path, seq, 'train.csv')
 
 target = os.environ['target']
 # args = sys.argv

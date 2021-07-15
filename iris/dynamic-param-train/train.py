@@ -4,7 +4,6 @@ import pandas as pd
 import os, sys
 
 home = os.environ['project_home']
-workflow_home = os.environ['workflow_path']
 step = "models"
 target_path = os.environ['target_path']
 seq = os.environ.get('seq', '0')
