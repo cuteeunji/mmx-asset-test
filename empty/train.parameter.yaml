@@ -2,11 +2,11 @@ parameter:
   - name: max_trial_count
     description: 최대 시도 횟수
     required: true
-    default_value: 2 4
-  - name: is_prod
-    description: 운영 여부
+    default_value: 2
+  - name: is_test
+    description: 테스트 여부
     required: true
     allowable_values:
       - true
-      - false b
-    default_value: true a
+      - false
+    default_value: true
