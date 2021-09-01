@@ -8,5 +8,5 @@ parameter:
     required: true
     allowable_values:
       - true
-      - false
+      - false b
     default_value: true a
