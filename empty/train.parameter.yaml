@@ -1,5 +1,5 @@
 parameter:
-  - name: retry
+  - name: retry_count
     description: 재시도 횟수
     required: true
     default_value: 2
