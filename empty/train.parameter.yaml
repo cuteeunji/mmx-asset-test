@@ -1,6 +1,6 @@
 parameter:
-  - name: max_trial_count
-    description: 최대 시도 횟수
+  - name: retry
+    description: 재시도 횟수
     required: true
     default_value: 2
   - name: is_test
