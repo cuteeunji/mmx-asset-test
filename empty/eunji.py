@@ -1,14 +1,13 @@
-import os, sys, time
+import os
+from mmxlib.s3a import s3downloader
 
-print('>>>>>> print argv')
-for arg in sys.argv:
-    print('Arg Value = ', arg)
+os.environ['BUCKET_NAME'] = 's3-an2-ha-linearcomp-cw2'
+os.environ['INDEX_CODE'] = 'category=anomaly/type=raw/item=align_min/'
 
-print('>>>>>> print env variables')
-for a in os.environ:
-    print(a, '=', os.getenv(a))
+home = os.environ['project_home']
+dest_path = os.path.join(home, 'data_in')
+start_time = '2021-11-01T00:00:00'
+end_time = '2021-11-01T00:30:00'
 
-sleep_time = os.getenv('sleep',600)
-print('>>>>>> sleep_time : {}s'.format(sleep_time))
-time.sleep(sleep_time)
-print('>>>>>> done')
+s3 = s3downloader.S3Downloader(dest_path, start_time, end_time, '')
+s3.execute()
