@@ -21,10 +21,11 @@ def main(argv):
     print('worker_num : {}'.format(worker_num))
     cmd_num = argv[1]
     print('cmd_num : {}'.format(cmd_num))
+    script_path = os.path.join(os.environ['user_home'], 'scripts', '_multiprocess.py')
 
     cmd_list = []
     for _ in range(int(cmd_num)):
-        cmd = 'python _multiprocess.py {}'.format(_)
+        cmd = 'python {} {}'.format(script_path, _)
         cmd_list.append(cmd)
 
     queue = multiprocessing.JoinableQueue()
