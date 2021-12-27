@@ -19,9 +19,11 @@ def main(argv):
     print('[start time] {}'.format(datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')))
     worker_num = argv[0]
     print('worker_num : {}'.format(worker_num))
+    cmd_num = argv[1]
+    print('cmd_num : {}'.format(cmd_num))
 
     cmd_list = []
-    for _ in range(1000):
+    for _ in range(int(cmd_num)):
         cmd = 'python _multiprocess.py {}'.format(_)
         cmd_list.append(cmd)
 
