@@ -1,0 +1,30 @@
+entry: asset_data_output
+parameter:
+  - name: edge_id
+    description: "Edge ID"
+    required: true
+    default_value: refri-kr2
+
+  - name: s3_bucket
+    description: "bucket of S3 storage"
+    required: true
+    default_value: "ca-vision-model-dev"
+
+  - name: s3_prefix
+    description: "prefix of S3 data"
+    required: false
+
+  - name: model_type
+    descripiton: "type of model, works as a distinguishable path in s3"
+    required: true
+    default_value: "refri-kr2-m0"
+
+  - name: train_log_path
+    description: "train_log that contains results"
+    required: true 
+    default_value: "/mm/project/refri-kr2/experiment/log.log"
+
+  - name: experiment_path
+    description: "the path that contains experiment results via hp_tuning"
+    required: true
+    default_value: "/mm/project/refri-kr2/experiment"
